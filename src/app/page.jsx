@@ -64,7 +64,7 @@ const SuccessCases = () => {
 
   return (
     <Box sx={{ textAlign: "center", p: 4, width: "100%" }}>
-      <Typography level="h2" sx={{ fontSize: "2rem", fontWeight: "bold", mb: 4 }}>
+      <Typography level="h2" sx={{ fontSize: "2rem", fontWeight: "bold", mb: 4, color: "#000000"  }}>
         Casos de Éxito
       </Typography>
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -75,7 +75,7 @@ const SuccessCases = () => {
               src={cases[activeIndex].beforeImg}
               alt="Antes"
               style={{
-                width: "100%",
+                width: "50%",
                 height: "100%",
                 objectFit: "cover",
                 borderRadius: "8px",
@@ -85,17 +85,17 @@ const SuccessCases = () => {
               src={cases[activeIndex].afterImg}
               alt="Después"
               style={{
-                width: "100%",
+                width: "50%",
                 height: "100%",
                 objectFit: "cover",
                 borderRadius: "8px",
               }}
             />
           </Box>
-          <Typography level="h3" mt={2}>
+          <Typography level="h3" mt={2} sx={{color: "#000000"}}>
             {cases[activeIndex].title}
           </Typography>
-          <Typography level="body1" mt={1}>
+          <Typography level="body1" mt={1} sx={{color: "#000000"}}>
             {cases[activeIndex].description}
           </Typography>
         </Box>
@@ -108,46 +108,85 @@ const SuccessCases = () => {
 const Redes = () => {
   const newSectionItems = [
     {
-      imgSrc: "image/instagram.jpg",
+      imgSrc: "/image/instagram.jpg",
       text: "Instagram",
       url: "https://www.enlace1.com",
     },
     {
-      imgSrc: "image/twitter.jpg",
+      imgSrc: "/image/twitter.jpg",
       text: "Twitter",
       url: "https://www.enlace2.com",
     },
     {
-      imgSrc: "image/spotify.jpg",
+      imgSrc: "/image/spotify.jpg",
       text: "Spotify",
       url: "https://www.enlace3.com",
     },
     {
-      imgSrc: "image/youtube.jpg",
+      imgSrc: "/image/youtube.jpg",
       text: "Youtube",
       url: "https://www.enlace4.com",
     },
   ];
 
   return (
-    <Box sx={{ textAlign: "center", p: 4, width: "40%", mt: 6 , backgroundColor: "#f5f5f5", color: "#000000"}}>
-      <Typography level="h2" sx={{ fontSize: "2rem", fontWeight: "bold", mb: 2,color: "#000000" }}>
+    <Box sx={{ textAlign: "center", p: 4, width: "40%", mt: 6 }}>
+      <Typography
+        level="h2"
+        sx={{ fontSize: "2rem", fontWeight: "bold", mb: 2, color: "#000000" }}
+      >
         Mis redes Sociales
       </Typography>
-      <Typography level="h3" sx={{ fontSize: "1.5rem", mb: 4,color: "#000000" }}>
+      <Typography
+        level="h3"
+        sx={{ fontSize: "1.5rem", mb: 4, color: "#000000" }}
+      >
         Este es un subtítulo
       </Typography>
-      <Box sx={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 4 }}>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: 4,
+          justifyItems: "center",
+          alignItems: "center",
+          padding: "10px",
+        }}
+      >
         {newSectionItems.map((item, index) => (
-          <Box key={index} sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-            <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+          <Box
+            key={index}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 1,
+            }}
+          >
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
               <img
                 src={item.imgSrc}
                 alt={item.text}
-                style={{ width: "50px", height: "50px", borderRadius: "8px", cursor: "pointer" }}
+                style={{
+                  width: "50px",
+                  height: "50px",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                  objectFit: "cover",
+                }}
               />
             </a>
-            <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <Typography level="body1" sx={{ cursor: "pointer" }}>
                 {item.text}
               </Typography>
@@ -159,16 +198,17 @@ const Redes = () => {
   );
 };
 
+
 const FormSection = () => {
   return (
     <Box sx={{ textAlign: "center", p: 4, width: "100%", mt: 6 }}>
-      <Typography level="h2" sx={{ fontSize: "2rem", fontWeight: "bold", mb: 2 }}>
+      <Typography level="h2" sx={{ fontSize: "2rem", fontWeight: "bold", mb: 2, color: "#000000" }}>
         Paso 3
       </Typography>
-      <Typography level="h3" sx={{ fontSize: "1.5rem", mb: 4 }}>
+      <Typography level="h3" sx={{ fontSize: "1.5rem", mb: 4, color: "#000000" }}>
         ¡Estamos aquí para ayudarte!
       </Typography>
-      <a href="https://www.enlaceformulario.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+      <a href="https://www.enlaceformulario.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "#000000" }}>
         <Typography
           level="body1"
           sx={{
@@ -185,6 +225,7 @@ const FormSection = () => {
     </Box>
   );
 };
+
 const Inicio = () => {
   return (
     <Box sx={{ width: "100%", height: "100%", display: "flex", flexDirection: "column" }}>
@@ -193,17 +234,41 @@ const Inicio = () => {
         <Navbar />
       </Box>
 
-      {/* Contenido principal */}
-      <Box sx={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%", p: 2 }}>
+      {/* Contenedor con fondo */}
+      <Box
+        sx={{
+          flex: 1,
+          backgroundImage: "url('/image/wallpaper.jpg')", // Ruta a la imagen
+          backgroundSize: "auto", // Ajusta el tamaño de la imagen según sea necesario
+          backgroundRepeat: "repeat", // Se repite en formato cuadros
+          backgroundPosition: "center", // Centra el fondo
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+          p: 2,
+        }}
+      >
+        {/* Contenido principal */}
         {/* Sección de video motivacional */}
-        <Box sx={{ position: "relative", width: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-          <Typography level="h1" sx={{ fontSize: "2rem", fontWeight: "bold", mb: 2, textAlign: "center" }}>
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography level="h1" sx={{ fontSize: "2rem", fontWeight: "bold", mb: 2, textAlign: "center", color: "#000000"}}>
             Paso 1
           </Typography>
-          <Typography level="h2" sx={{ fontSize: "1.5rem", mb: 1, textAlign: "center" }}>
+          <Typography level="h2" sx={{ fontSize: "1.5rem", mb: 1, textAlign: "center", color: "#000000" }}>
             Subtítulo 1
           </Typography>
-          <Typography level="h3" sx={{ fontSize: "1.25rem", mb: 2, textAlign: "center" }}>
+          <Typography level="h3" sx={{ fontSize: "1.25rem", mb: 2, textAlign: "center", color: "#000000" }}>
             Subtítulo 2
           </Typography>
           <Box
@@ -227,20 +292,14 @@ const Inicio = () => {
           </Box>
         </Box>
 
-        {/* Sección de Calendly */}
-        <Box sx={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", mt: 4 }}>
-          <Typography level="h1" sx={{ fontSize: "2rem", fontWeight: "bold", mb: 2, textAlign: "center" }}>
-            Paso 2
-          </Typography>
-          <Typography level="h2" sx={{ fontSize: "1.5rem", mb: 1, textAlign: "center" }}>
-            Agenda una reunión lo antes posible
-          </Typography>
-          <Box sx={{ width: "100%", maxWidth: "1200px", boxShadow: "lg", borderRadius: "lg", overflow: "hidden", height: "90%" }}>
+        {/* Resto de secciones */}
+        <Box sx={{ width: "60%", display: "flex", flexDirection: "column", gap: 6, mt: 6 }}>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
             <InlineWidget
               url="https://calendly.com/maxispano1/consultoria"
               styles={{
-                height: "800px",  // Aumenta la altura para hacerlo más grande
-                width: "100%",    // Mantén el ancho en 100%
+                height: "700px",
+                width: "100%",
               }}
               pageSettings={{
                 backgroundColor: "white",
@@ -249,22 +308,25 @@ const Inicio = () => {
               }}
             />
           </Box>
+          {/* Sección del Formulario */}
+          <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mt: 6 }}>
+            <Box sx={{ maxWidth: "1200px", width: "100%" }}>
+              <FormSection />
+            </Box>
+          </Box>
+
+          {/* Casos de Éxito */}
+          <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mt: 6 }}>
+            <Box sx={{ maxWidth: "1200px", width: "100%" }}>
+              <SuccessCases />
+            </Box>
+          </Box>
+
+          {/* Redes Sociales */}
+          <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mt: 6 }}>
+              <Redes />
+          </Box>
         </Box>
-      </Box>
-
-      {/* Sección del Formulario */}
-      <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mt: 6 }}>
-        <FormSection />
-      </Box>
-
-      {/* Casos de Éxito */}
-      <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mt: 6 }}>
-        <SuccessCases />
-      </Box>
-
-      {/* Redes Sociales */}
-      <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", mt: 6 }}>
-        <Redes />
       </Box>
 
       {/* Footer */}
